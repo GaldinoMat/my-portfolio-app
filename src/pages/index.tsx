@@ -1,8 +1,5 @@
 import Head from "next/head"
-import { Inter } from "next/font/google"
 import { useEffect, useMemo, useState } from "react"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
   const stacks = useMemo(() => ["web", "game", "Front-end"], [])
@@ -51,7 +48,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-screen flex flex-col items-center justify-center">
+      <div className="flex h-screen flex-col items-center justify-center">
         <div className="text-5xl text-center lg:w-[22.5rem]">
           Hello, I am
           <h2 className="flex text-center justify-between px-6 lg:px-0 mt-5 font-medium">

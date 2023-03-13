@@ -4,7 +4,7 @@ import { DrawerType } from "../typings/types"
 function DrawerMenu({ isNavOpen, setIsNavOpen }: DrawerType) {
   return (
     <nav
-      className={`w-full h-screen fixed bg-[#101010] top-0 left-0 flex flex-col items-center justify-center gap-3 z-10 transition-all ${
+      className={`w-full h-screen fixed bg-[#101010] top-0 left-0 flex flex-col items-center justify-center gap-3 z-20 transition-all ${
         !isNavOpen && "-translate-y-full"
       }`}
     >

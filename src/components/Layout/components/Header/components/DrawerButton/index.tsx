@@ -5,7 +5,7 @@ function DrawerButton({ isNavOpen, setIsNavOpen }: DrawerType) {
     <section className="w-full lg:max-w-7xl lg:mx-auto flex justify-end items-center lg:px-8">
       <button
         type="button"
-        className="w-12 h-8 flex flex-col justify-between items-end py-[6px] z-20 group"
+        className="w-12 h-8 flex flex-col justify-between items-end p-[6px] z-30 group"
         onClick={() => setIsNavOpen(!isNavOpen)}
       >
         <span
@@ -20,7 +20,7 @@ function DrawerButton({ isNavOpen, setIsNavOpen }: DrawerType) {
         />
         <span
           className={`block w-4/5 h-[2px] bg-[#A7A7A7] transition-all group-hover:w-full group-hover:bg-white ${
-            isNavOpen ? "-rotate-45 -translate-y-[0.5rem]" : ""
+            isNavOpen ? "w-full -rotate-45 -translate-y-[0.5rem]" : ""
           }`}
         />
       </button>
