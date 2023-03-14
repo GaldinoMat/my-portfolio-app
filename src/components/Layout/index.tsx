@@ -1,10 +1,6 @@
-import { ReactNode } from "react"
 import Header from "./components/Header"
 import Socials from "./components/Socials"
-
-type LayoutType = {
-  children: ReactNode
-}
+import { LayoutType } from "./typings/types"
 
 function Layout({ children }: LayoutType) {
   return (

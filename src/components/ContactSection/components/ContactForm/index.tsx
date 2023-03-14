@@ -1,20 +1,38 @@
 import React, { useRef } from "react"
 import EmailJSResponseStatus from "@emailjs/browser"
+import { toast } from "react-toastify"
+
+interface IElement extends Element {
+  value?: string
+}
 
 function ContactForm() {
-  const form = useRef(null)
+  const form = useRef<HTMLFormElement>(null)
 
   const sendEmail = (e: Event) => {
     e.preventDefault()
 
-    const currentForm = form.current as unknown as string | HTMLFormElement
-
-    EmailJSResponseStatus.sendForm(
-      process.env.NEXT_PUBLIC_SERVICE_ID as string,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-      currentForm,
-      process.env.NEXT_PUBLIC_EMAIL_KEY as string
-    )
+    toast
+      .promise(
+        EmailJSResponseStatus.sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID as string,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+          form.current as HTMLFormElement,
+          process.env.NEXT_PUBLIC_EMAIL_KEY as string
+        ),
+        {
+          pending: "Sending e-mail...",
+          success: "Email sent! 👌",
+          error: "Oops! Something went wrong! 🤯",
+        }
+      )
+      .then(() => {
+        if (form.current) {
+          Array.from(form.current.children).forEach((element: IElement) => {
+            element.value = ""
+          })
+        }
+      })
   }
 
   return (
@@ -43,7 +61,7 @@ function ContactForm() {
           type="text"
         />
         <textarea
-          className="w-11/12 mx-auto bg-[#050505] py-2 px-4 rounded-md h-full lg:min-h-[16rem]"
+          className="w-11/12 mx-auto bg-[#050505] py-2 px-4 rounded-md min-h-[16rem] lg:min-h-[16rem]"
           name="message"
           placeholder="Enter your message here"
         />

@@ -1,10 +1,7 @@
 import Card from "@/components/Card"
 import React from "react"
 import { InfoCardType } from "@/components/typings/types"
-
-type StackCardsType = {
-  cardsInfo: InfoCardType[]
-}
+import { StackCardsType } from "./typings/types"
 
 function StackCards({ cardsInfo }: StackCardsType) {
   return (

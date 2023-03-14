@@ -1,9 +1,5 @@
 import React from "react"
-
-type PageTitleType = {
-  prefix: string
-  suffix: string
-}
+import { PageTitleType } from "./typings/types"
 
 function PageTitle({ prefix, suffix }: PageTitleType) {
   return (

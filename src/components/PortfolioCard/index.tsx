@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { ShowcaseType } from "../typings/types"
+import { ShowcaseType } from "./typings/types"
 
 function PortfolioCard({
   isOwner,

@@ -1,5 +1,5 @@
-import { InfoType } from "@/components/typings/types"
 import Image from "next/image"
+import { InfoType } from "./typings/types"
 
 function SocialLink({ logoSource, alt, href }: InfoType) {
   return (

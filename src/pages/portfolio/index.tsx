@@ -1,15 +1,11 @@
 import PageTitle from "@/components/PageTitle"
 import PortfolioCard from "@/components/PortfolioCard"
 import PortfolioShowcase from "@/components/PortfolioShowcase"
-import { ShowcaseType } from "@/components/typings/types"
+import { PortfolioTypes } from "@/components/typings/types"
 import { gql } from "@apollo/client"
 import type { GetServerSideProps } from "next"
 import React, { useEffect, useState } from "react"
 import client from "../../../apolloClient"
-
-type PortfolioTypes = {
-  portfolioShowcases: ShowcaseType[]
-}
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
