@@ -26,55 +26,37 @@ function Contact() {
               <p className="text-xl">Front end developer</p>
             </li>
             <li>Send me a message and let&apos;s schedule a call!</li>
-            <li>You can also find me at: galdino_mateus1000@outlook.com</li>
+            <li>You can also find me at: mateusgaldev@gmail.com</li>
             <li>Also, be sure to check out out my socials!</li>
           </ul>
         </div>
-        <div className="flex items-center flex-col gap-5 w-full lg:w-1/2 bg-[#191919] py-4 rounded-md">
-          <form action="" method="post" className="flex flex-col gap-4 w-full">
-            <div className="w-full px-4">
-              <input
-                className="w-full bg-[#050505] py-2 px-4 rounded-md"
-                placeholder="Your name here"
-                type="text"
-                name=""
-                id=""
-              />
-            </div>
-            <div className="w-full px-4">
-              <input
-                className="w-full bg-[#050505] py-2 px-4 rounded-md"
-                placeholder="You email here"
-                type="email"
-                name=""
-                id=""
-              />
-            </div>
-            <div className="w-full px-4">
-              <input
-                className="w-full bg-[#050505] py-2 px-4 rounded-md"
-                placeholder="Subject"
-                type="text"
-                name=""
-                id=""
-              />
-            </div>
-            <div className="w-full px-4">
-              <textarea
-                className="w-full bg-[#050505] py-2 px-4 rounded-md h-full lg:min-h-[16rem]"
-                placeholder="Enter your message here"
-                name=""
-                id=""
-              />
-            </div>
-            <div className="w-full px-4 text-center">
-              <button
-                className="text-center border border-[#481380] text-[#481380] w-[10rem] py-2 mx-auto lg:mx-0"
-                type="submit"
-              >
-                Send!
-              </button>
-            </div>
+        <div className="flex items-center justify-center flex-col gap-5 w-full lg:w-1/2 bg-[#191919] py-5 rounded-md">
+          <form className="flex flex-col gap-4 w-full">
+            <input
+              className="w-11/12 mx-auto bg-[#050505] py-2 px-4 rounded-md"
+              placeholder="Your name here"
+              type="text"
+            />
+            <input
+              className="w-11/12 mx-auto bg-[#050505] py-2 px-4 rounded-md"
+              placeholder="You email here"
+              type="email"
+            />
+            <input
+              className="w-11/12 mx-auto bg-[#050505] py-2 px-4 rounded-md"
+              placeholder="Subject"
+              type="text"
+            />
+            <textarea
+              className="w-11/12 mx-auto bg-[#050505] py-2 px-4 rounded-md h-full lg:min-h-[16rem]"
+              placeholder="Enter your message here"
+            />
+            <button
+              className="text-center border border-[#481380] text-[#481380] w-[10rem] py-2 mx-auto"
+              type="submit"
+            >
+              Send!
+            </button>
           </form>
         </div>
       </div>
