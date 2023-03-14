@@ -17,7 +17,7 @@ function PortfolioCard({
 
   return (
     <div className="w-full lg:flex lg:flex-row lg:items-center lg:justify-center">
-      <div className="relative h-[500px] lg:w-2/3 z-0">
+      <div className="relative h-[31rem] lg:w-2/3 z-0">
         {windowSize < 1024 ? (
           <Image
             className="z-0"
@@ -63,7 +63,7 @@ function PortfolioCard({
         </span>
         <div className="lg:flex lg:justify-center lg:gap-6">
           <Link
-            className="text-center border border-[#481380] text-[#481380] w-[150px] py-2 mx-auto lg:mx-0"
+            className="text-center border border-[#481380] text-[#481380] w-[10rem] py-2 mx-auto lg:mx-0"
             target="_blank"
             href={projectRepoUrl}
           >
@@ -71,7 +71,7 @@ function PortfolioCard({
           </Link>
           {projectReleaseUrl && (
             <Link
-              className="text-center border border-[#481380] text-[#481380] w-[150px] py-2 mx-auto lg:mx-0"
+              className="text-center border border-[#481380] text-[#481380] w-[10rem] py-2 mx-auto lg:mx-0"
               target="_blank"
               href={projectReleaseUrl}
             >

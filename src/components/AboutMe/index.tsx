@@ -1,11 +1,9 @@
+import PageTitle from "../PageTitle"
+
 function AboutMe() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="text-center">
-        <h3 className="text-4xl font-medium">
-          <span className="text-[#481380]">About</span> me
-        </h3>
-      </div>
+      <PageTitle prefix="About" suffix="me" />
       <div className="flex flex-col gap-3">
         <p className="text-xl font-medium">
           Hey there! My name is Mateus Galdino, I&apos;m a Brazilian web

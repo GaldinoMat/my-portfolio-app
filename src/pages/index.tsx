@@ -49,7 +49,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex h-screen flex-col items-center justify-center">
-        <div className="text-5xl text-center lg:w-[22.5rem]">
+        <div className="text-5xl text-center lg:w-[22rem]">
           Hello, I am
           <h2 className="flex text-center justify-between px-6 lg:px-0 mt-5 font-medium">
             <span className="text-[#481380]">Mateus</span> Galdino
