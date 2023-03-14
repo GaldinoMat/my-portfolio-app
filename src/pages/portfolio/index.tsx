@@ -1,5 +1,6 @@
 import PageTitle from "@/components/PageTitle"
 import PortfolioCard from "@/components/PortfolioCard"
+import PortfolioShowcase from "@/components/PortfolioShowcase"
 import { ShowcaseType } from "@/components/typings/types"
 import { gql } from "@apollo/client"
 import type { GetServerSideProps } from "next"
@@ -39,7 +40,7 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
   return (
     <div className="w-full py-20 px-8 flex flex-col gap-6 lg:max-w-7xl lg:mx-auto">
       <PageTitle prefix="My" suffix="portfolio" />
-      <div className="flex flex-col gap-20 lg:gap-28">
+      <PortfolioShowcase>
         {portfolioShowcases.map((showcase) => (
           <PortfolioCard
             key={showcase.projectName}
@@ -53,7 +54,7 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
             stackList={showcase.stackList}
           />
         ))}
-      </div>
+      </PortfolioShowcase>
     </div>
   )
 }
