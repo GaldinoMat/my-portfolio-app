@@ -11,13 +11,17 @@ function Card({
 }: InfoCardType) {
   return (
     <div
-      className={`${first ? "bg-[#212121]" : "bg-white"} ${
-        stackCard && "bg-[#212121]"
+      className={`${
+        first
+          ? "bg-[#292929] dark:bg-slate-100"
+          : "bg-slate-100 dark:bg-[#373737]"
+      } ${
+        stackCard && "bg-[#292929] dark:bg-[#373737]"
       } shadow-md lg:[&:not(:last-child)]:flex-1 text-center rounded-lg h-80 w-full lg:w-80 flex flex-col items-start justify-center lg:justify-between lg:p-9 gap-2 px-6`}
     >
       <div
         className={`h-14 w-14 text-center flex items-center justify-center ${
-          stackCard && "bg-white rounded-full"
+          stackCard && "bg-slate-100 dark:bg-[#373737] rounded-full"
         } `}
       >
         <Image
@@ -30,14 +34,22 @@ function Card({
       </div>
       <p
         className={`text-2xl lg:text-xl text-left ${
-          first ? "text-white" : "text-black"
-        } ${stackCard && "text-white"} w-40`}
+          first
+            ? "text-slate-100 dark:text-[#292929]"
+            : stackCard
+            ? "text-slate-100"
+            : "text-[#292929] dark:text-slate-100"
+        } w-40`}
       >
         {title}
       </p>
       <p
-        className={`text-left ${first ? "text-white" : "text-black"} ${
-          stackCard && "text-white"
+        className={`text-left ${
+          first
+            ? "text-slate-100 dark:text-[#292929]"
+            : stackCard
+            ? "text-slate-100"
+            : "text-[#292929] dark:text-slate-100"
         } w-56`}
       >
         {subtitle}

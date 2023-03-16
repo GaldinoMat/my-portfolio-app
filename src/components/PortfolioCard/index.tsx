@@ -39,18 +39,18 @@ function PortfolioCard({
           />
         )}
       </div>
-      <div className="flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 group-hover:bg-[#212121] group-hover:opacity-100 z-0 transition-all group-hover:z-10 rounded-lg">
+      <div className="flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 group-hover:bg-[#212121] dark:group-hover:bg-[#373737] group-hover:opacity-100 z-0 transition-all group-hover:z-10 rounded-lg">
         <div className="p-6 flex w-full h-full flex-col gap-6 justify-center lg:justify-between lg:items-start">
           <div className="flex w-full justify-between">
-            <h4 className="text-white text-xl lg:text-3xl font-normal w-full">
+            <h4 className="text-slate-100 text-xl lg:text-3xl font-normal w-full">
               {projectName}
             </h4>
             {isOwner ? (
-              <span className="text-center border border-white text-white p-3 py-1 rounded-md">
+              <span className="text-center border border-slate-100 text-slate-100 p-3 py-1 rounded-md">
                 Owner
               </span>
             ) : (
-              <span className="text-center border border-white text-white p-3 py-1 rounded-md">
+              <span className="text-center border border-slate-100 text-slate-100 p-3 py-1 rounded-md">
                 Collaborator
               </span>
             )}
@@ -58,7 +58,7 @@ function PortfolioCard({
           <p
             className={`text-sm lg:${
               single && "w-2/5"
-            } font-normal lg:text-base text-white`}
+            } font-normal lg:text-base text-slate-100`}
           >
             {projectDescription.text}
           </p>
@@ -71,7 +71,7 @@ function PortfolioCard({
           </ul>
           <div className="flex gap-6 w-full lg:gap-6">
             <Link
-              className="text-center border border-white text-white w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
+              className="text-center border border-slate-100 text-slate-100 w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
               target="_blank"
               href={projectRepoUrl}
             >
@@ -79,7 +79,7 @@ function PortfolioCard({
             </Link>
             {projectReleaseUrl && (
               <Link
-                className="text-center border border-white text-white w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
+                className="text-center border border-slate-100 text-slate-100 w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
                 target="_blank"
                 href={projectReleaseUrl}
               >

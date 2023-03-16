@@ -4,7 +4,7 @@ import React from "react"
 function ContactBox() {
   return (
     <div className="py-4 h-full lg:w-1/2 lg:h-[32.5rem] rounded-lg flex flex-col gap-5">
-      <ul className="text-lg flex flex-col gap-4 text-[#212121]">
+      <ul className="text-lg flex flex-col gap-4">
         <li>Brasília, Brazil</li>
         <li>
           You can also find me at:{" "}

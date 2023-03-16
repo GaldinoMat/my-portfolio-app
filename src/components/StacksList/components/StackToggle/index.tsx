@@ -13,7 +13,7 @@ function StackToggle({ handleTabChange, id, selectedTab }: StackToggleType) {
         className={`w-full py-4 rounded-lg transition-all ${
           id.toLowerCase() === selectedTab.toLowerCase()
             ? "bg-[#A6A6A6] text-black"
-            : "text-white"
+            : "text-slate-100"
         }`}
         onClick={(e) => handleTabChange(e as unknown as Event)}
       >

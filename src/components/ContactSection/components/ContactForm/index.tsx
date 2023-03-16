@@ -43,30 +43,30 @@ function ContactForm() {
         onSubmit={(e) => sendEmail(e as unknown as Event)}
       >
         <input
-          className="w-full mx-auto border border-[#8F8F8F] text-[#212121] bg-transparent placeholder:text-[#212121] py-2 px-4 rounded-md"
+          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100  py-2 px-4 rounded-md"
           placeholder="Your name here"
           name="user_name"
           type="text"
         />
         <input
-          className="w-full mx-auto border border-[#8F8F8F] text-[#212121] bg-transparent placeholder:text-[#212121] py-2 px-4 rounded-md"
+          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100 py-2 px-4 rounded-md"
           placeholder="You email here"
           name="user_email"
           type="email"
         />
         <input
-          className="w-full mx-auto border border-[#8F8F8F] text-[#212121] bg-transparent placeholder:text-[#212121] py-2 px-4 rounded-md"
+          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100 py-2 px-4 rounded-md"
           name="subject"
           placeholder="Subject"
           type="text"
         />
         <textarea
-          className="w-full mx-auto border border-[#8F8F8F] text-[#212121] bg-transparent placeholder:text-[#212121] py-2 px-4 rounded-md min-h-[16rem] lg:min-h-[16rem]"
+          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100 py-2 px-4 rounded-md min-h-[16rem] lg:min-h-[16rem]"
           name="message"
           placeholder="Enter your message here"
         />
         <button
-          className="text-center border border-[#8F8F8F] text-[#212121] bg-transparent placeholder:text-[#212121] w-[10rem] py-2 mx-auto"
+          className="text-center border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent w-[10rem] py-2 mx-auto rounded-md"
           type="submit"
         >
           Send!
