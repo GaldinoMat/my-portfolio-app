@@ -8,7 +8,7 @@ function Header() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="w-full bg-white dark:bg-onyx fixed z-20">
+    <header className="w-full bg-white dark:bg-onyx sticky top-0 z-20">
       <section className="py-4 max-w-xs lg:max-w-5xl mx-auto flex justify-end">
         <button
           className="ml-16"

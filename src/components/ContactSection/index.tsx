@@ -4,7 +4,7 @@ import ContactForm from "./components/ContactForm"
 
 function ContactSection() {
   return (
-    <div className="flex flex-col h-full lg:flex-row lg:items-center lg:justify-between gap-6 justify-self-center my-auto pb-8">
+    <div className="flex flex-col h-full lg:flex-row lg:items-center lg:justify-between gap-6 justify-self-center">
       <ContactBox />
       <ContactForm />
     </div>
