@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import CTAButton from "../CTAButton"
 
-function AboutMe() {
+function AboutMeHero() {
   const stacks = useMemo(() => ["web", "game", "Front-end"], [])
   const [selectedStack, setSelectedStack] = useState(stacks[0])
   const [typing, setTyping] = useState("isTyping")
@@ -41,18 +41,18 @@ function AboutMe() {
   }, [displayedStack, selectedStack, stacks, typing])
 
   return (
-    <div className="flex h-[28rem] lg:h-[30rem] flex-col items-start justify-center bg-silver w-full">
+    <div className="flex h-[28rem] bg-[#EAEAEA] dark:bg-[#212121]  lg:h-[30rem] flex-col items-start justify-center w-full">
       <div className="w-full flex px-4 lg:px-2 flex-col items-start justify-center gap-4 lg:max-w-5xl lg:mx-auto">
         <div className="lg:w-[22rem]">
           <h2 className="text-lg lg:text-2xl lg:px-0 mt-5 font-medium">
             Hello, I am
-            <span className="text-paynes-gray"> Mateus</span> Galdino
+            <span className="text-[#A6A6A6]"> Mateus</span> Galdino
           </h2>
         </div>
         <div>
           <p className="text-3xl lg:text-6xl font-medium">
             A{" "}
-            <span className="text-paynes-gray after:content-['|'] after:animate-blinking">
+            <span className="text-[#A6A6A6] after:content-['|'] after:animate-blinking">
               {displayedStack}
             </span>
             developer
@@ -75,4 +75,4 @@ function AboutMe() {
   )
 }
 
-export default AboutMe
+export default AboutMeHero

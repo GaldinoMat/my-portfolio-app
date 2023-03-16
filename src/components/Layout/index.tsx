@@ -7,9 +7,9 @@ import { LayoutType } from "./typings/types"
 function Layout({ children }: LayoutType) {
   return (
     <ThemeProvider attribute="class">
-      <div>
+      <div className="bg-slate-100 dark:bg-[#292929]">
         <Header />
-        <main className="bg-white dark:bg-onyx flex flex-col gap-10 items-center justify-center text-onyx">
+        <main className="text-[#212121] flex flex-col gap-10 items-center justify-center pb-[74.7px]">
           {children}
         </main>
         <Socials />

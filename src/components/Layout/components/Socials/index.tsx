@@ -6,7 +6,7 @@ import SocialLink from "./components"
 
 function Socials() {
   return (
-    <section className="w-full p-6 flex mt-[5.3rem] flex-col gap-4 bg-onyx text-silver">
+    <section className="w-full p-6 flex flex-col gap-4 bg-[#212121] text-white text-silver">
       <div className="text-center flex justify-center gap-4">
         {["Home", "Portfolio", "Contact"].map((item) => (
           <Link

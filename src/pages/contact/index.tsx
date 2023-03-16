@@ -15,13 +15,13 @@ function Contact() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18">
+      <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
         <PageTitle
           prefix="Contact"
           suffix="me."
           subtitleText="Send me an email!"
         />
-        <div className="w-full h-52 lg:h-96 relative overflow-hidden rounded-lg">
+        <div className="w-full h-52 lg:h-96 relative overflow-hidden rounded-lg shadow-md">
           <Image
             src={JavascriptCode}
             fill

@@ -13,6 +13,7 @@ function StackCards({ cardsInfo }: StackCardsType) {
           title={cardInfo.title}
           subtitle={cardInfo.subtitle}
           alt={cardInfo.alt}
+          stackCard
         />
       ))}
     </div>

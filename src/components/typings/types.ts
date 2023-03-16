@@ -4,6 +4,8 @@ import { ShowcaseType } from "../PortfolioCard/typings/types"
 export type InfoCardType = InfoType & {
   title: string
   subtitle: string
+  first?: boolean
+  stackCard?: boolean
 }
 
 export type PortfolioTypes = {

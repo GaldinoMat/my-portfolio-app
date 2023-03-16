@@ -3,13 +3,6 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    colors: {
-      onyx: "#393d3fff",
-      white: "#fdfdffff",
-      silver: "#c6c5b9ff",
-      "blue-munsell": "#62929eff",
-      "paynes-gray": "#546a7bff",
-    },
     extend: {
       keyframes: {
         blink: {

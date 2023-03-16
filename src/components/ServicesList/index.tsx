@@ -4,9 +4,10 @@ import CTAButton from "../CTAButton"
 
 function ServicesList() {
   return (
-    <div className="flex flex-col gap-6 -mt-20 w-full px-8 lg:max-w-5xl lg:px-2">
+    <div className="flex flex-col gap-6 -mt-20 w-full">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
         <Card
+          first
           logoSource={Desktop}
           title="Front-end development"
           subtitle="Crafting visually appealing and intuitive user interfaces with React and Next.js."
