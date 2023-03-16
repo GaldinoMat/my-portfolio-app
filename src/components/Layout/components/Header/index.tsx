@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <header className="w-full bg-white dark:bg-onyx fixed z-20">
-      <section className="py-4 max-w-[18.75rem] lg:max-w-5xl mx-auto">
+      <section className="py-4 max-w-xs lg:max-w-5xl mx-auto flex justify-end">
         <button
           className="ml-16"
           type="button"

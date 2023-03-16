@@ -8,7 +8,7 @@ function Layout({ children }: LayoutType) {
     <ThemeProvider attribute="class">
       <div className="relative">
         <Header />
-        <main className="bg-white dark:bg-onyx flex flex-col gap-10 items-center justify-center text-onyx py-20">
+        <main className="bg-white dark:bg-onyx flex flex-col gap-10 items-center justify-center text-onyx py-16">
           {children}
         </main>
         <Socials />

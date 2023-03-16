@@ -12,11 +12,16 @@ function PortfolioCard({
   projectRepoUrl,
   windowSize = 0,
   stackList,
+  single = false,
 }: ShowcaseType) {
   const { desktopImage, mobileImage } = projectImages
 
   return (
-    <div className="w-full lg:w-[485px] h-[32rem] lg:flex lg:flex-row lg:items-center lg:justify-center relative group">
+    <div
+      className={`w-full ${
+        single ? "lg:w-full" : "lg:w-[485px]"
+      } h-[32rem] lg:flex lg:flex-row lg:items-center lg:justify-center relative group`}
+    >
       <div className="relative h-full w-full z-0">
         {windowSize < 1024 ? (
           <Image
@@ -35,7 +40,7 @@ function PortfolioCard({
         )}
       </div>
       <div
-        className="flex w-full h-full absolute top-0 left-0 bottom-0 right-0 opacity-0 group-hover:bg-gradient-to-tr
+        className="flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 group-hover:bg-gradient-to-tr
         group-hover:bg-onyx group-hover:opacity-100 z-0 transition-all group-hover:z-10 rounded-lg"
       >
         <div className="p-6 flex w-full h-full flex-col gap-6 justify-center lg:justify-between lg:items-start">
@@ -53,7 +58,11 @@ function PortfolioCard({
               </span>
             )}
           </div>
-          <p className="text-sm font-normal lg:text-base text-silver">
+          <p
+            className={`text-sm lg:${
+              single && "w-2/5"
+            } font-normal lg:text-base text-silver`}
+          >
             {projectDescription.text}
           </p>
           <ul className="flex flex-wrap gap-2">

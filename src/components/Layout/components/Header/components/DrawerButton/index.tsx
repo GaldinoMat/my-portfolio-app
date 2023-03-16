@@ -2,7 +2,7 @@ import { DrawerType } from "../typings/types"
 
 function DrawerButton({ isNavOpen, setIsNavOpen }: DrawerType) {
   return (
-    <section className="w-full flex justify-end items-center">
+    <section className="flex justify-end items-center">
       <button
         type="button"
         className="w-12 h-8 flex flex-col justify-between items-end p-[.375rem] z-30 group"

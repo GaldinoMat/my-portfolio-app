@@ -1,19 +1,15 @@
 import React from "react"
 import { PageTitleType } from "./typings/types"
 
-function PageTitle({
-  prefix,
-  suffix,
-  desktopFontSize = 6,
-  mobileFontSize = 4,
-}: PageTitleType) {
+function PageTitle({ prefix, suffix, subtitleText }: PageTitleType) {
   return (
-    <div>
-      <h3
-        className={`text-${mobileFontSize}xl lg:text-${desktopFontSize}xl font-medium`}
-      >
+    <div className="flex flex-col gap-2">
+      <h3 className="text-3xl lg:text-5xl font-medium">
         <span className="text-paynes-gray">{prefix}</span> {suffix}
       </h3>
+      {subtitleText && (
+        <p className="text-base lg:text-xl font-medium">{subtitleText}</p>
+      )}
     </div>
   )
 }

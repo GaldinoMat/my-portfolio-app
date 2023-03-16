@@ -1,13 +1,17 @@
 import React from "react"
 import ContactSection from "@/components/ContactSection"
-import ContactTitle from "@/components/ContactTitle"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import PageTitle from "@/components/PageTitle"
 
 function Contact() {
   return (
     <div className="w-full h-full lg:h-screen py-20 px-8 flex flex-col gap-6 lg:max-w-7xl lg:mx-auto">
-      <ContactTitle />
+      <PageTitle
+        prefix="Contact"
+        suffix="me."
+        subtitleText="Send me an email!"
+      />
       <ContactSection />
       <ToastContainer
         position="bottom-left"

@@ -10,4 +10,5 @@ export type ShowcaseType = {
   projectRepoUrl: string
   windowSize?: number
   stackList: { url: string }[]
+  single?: boolean
 }
