@@ -1,11 +1,18 @@
 import React from "react"
 import { PageTitleType } from "./typings/types"
 
-function PageTitle({ prefix, suffix }: PageTitleType) {
+function PageTitle({
+  prefix,
+  suffix,
+  desktopFontSize = 6,
+  mobileFontSize = 4,
+}: PageTitleType) {
   return (
-    <div className="text-center">
-      <h3 className="text-4xl font-medium text-center">
-        <span className="text-[#481380]">{prefix}</span> {suffix}
+    <div>
+      <h3
+        className={`text-${mobileFontSize}xl lg:text-${desktopFontSize}xl font-medium`}
+      >
+        <span className="text-paynes-gray">{prefix}</span> {suffix}
       </h3>
     </div>
   )

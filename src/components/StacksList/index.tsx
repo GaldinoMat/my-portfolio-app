@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import StackToggle from "./components/StackToggle"
 import StackCards from "./components/StackCards"
 import stacks from "./utils/stacksObjects"
+import PageTitle from "../PageTitle"
 
 function StacksList() {
   const [selectedTab, setSelectedTab] = useState("Languages")
@@ -20,13 +21,16 @@ function StacksList() {
   }, [selectedTab])
 
   return (
-    <div className="flex flex-col gap-6">
-      <h4 className="text-5xl text-center font-medium">
-        <span className="text-[#481380]">My</span> stacks
-      </h4>
+    <div className="flex flex-col gap-8 lg:max-w-5xl lg:px-2">
+      <PageTitle
+        prefix="My"
+        suffix="stacks."
+        mobileFontSize={3}
+        desktopFontSize={4}
+      />
       <div className="flex flex-col lg:flex-row gap-6">
-        <div className="bg-[#191919] text-center rounded-lg lg:h-[17.5rem] lg:w-1/3">
-          <ul className="flex flex-col items-center lg:h-auto">
+        <div className="bg-onyx shadow-md shadow-blue-munsell text-center rounded-lg lg:h-[17.5rem] lg:w-80">
+          <ul className="flex flex-col items-center lg:h-auto w-full">
             <StackToggle
               id="Languages"
               handleTabChange={handleTabChange}

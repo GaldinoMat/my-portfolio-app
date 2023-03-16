@@ -1,44 +1,41 @@
+import AboutMe from "@/components/AboutMe"
+import PageTitle from "@/components/PageTitle"
+import PortfolioCard from "@/components/PortfolioCard"
+import PortfolioShowcase from "@/components/PortfolioShowcase"
+import ServicesList from "@/components/ServicesList"
+import StacksList from "@/components/StacksList"
+import { PortfolioTypes } from "@/components/typings/types"
+import { gql } from "@apollo/client"
 import Head from "next/head"
-import { useEffect, useMemo, useState } from "react"
+import { GetServerSideProps } from "next/types"
+import { useEffect, useState } from "react"
+import client from "../../apolloClient"
 
-export default function Home() {
-  const stacks = useMemo(() => ["web", "game", "Front-end"], [])
-  const [selectedStack, setSelectedStack] = useState(stacks[0])
-  const [typing, setTyping] = useState("isTyping")
-
-  const [displayedStack, setDisplayedStack] = useState("")
-
-  const sleep = (ms: number) =>
-    new Promise((resolve) => {
-      setTimeout(resolve, ms)
-    })
+export function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  })
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (typing === "isTyping" && displayedStack !== selectedStack) {
-        setDisplayedStack(selectedStack.slice(0, displayedStack.length + 1))
-      } else if (displayedStack === selectedStack && typing === "isTyping") {
-        sleep(2000).then(() => {
-          setTyping("isDeleting")
-        })
-      } else if (
-        (displayedStack === selectedStack && typing === "isDeleting") ||
-        typing === "isDeleting"
-      ) {
-        setDisplayedStack(selectedStack.slice(0, displayedStack.length - 1))
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
 
-        if (displayedStack.length <= 1) {
-          setTyping("isTyping")
-          setSelectedStack(
-            selectedStack === stacks[stacks.length - 1]
-              ? stacks[0]
-              : stacks[stacks.indexOf(selectedStack) + 1]
-          )
-        }
-      }
-    }, 150)
-    return () => clearTimeout(timeout)
-  }, [displayedStack, selectedStack, stacks, typing])
+    window.addEventListener("resize", handleResize)
+
+    handleResize()
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+  return windowSize
+}
+
+export default function Home({ portfolioShowcases }: PortfolioTypes) {
+  const size = useWindowSize()
 
   return (
     <>
@@ -48,23 +45,74 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex h-screen flex-col items-center justify-center">
-        <div className="text-5xl text-center lg:w-[22rem]">
-          Hello, I am
-          <h2 className="flex text-center justify-between px-6 lg:px-0 mt-5 font-medium">
-            <span className="text-[#481380]">Mateus</span> Galdino
-          </h2>
-        </div>
-        <div className="text-center">
-          <p className="text-3xl font-medium">
-            A{" "}
-            <span className="text-[#481380] after:content-['|'] after:animate-blinking">
-              {displayedStack}
-            </span>{" "}
-            developer
-          </p>
-        </div>
-      </div>
+      <AboutMe />
+      <ServicesList />
+      <PageTitle prefix="My" suffix="works." />
+      <PortfolioShowcase>
+        {portfolioShowcases.map((showcase) => (
+          <PortfolioCard
+            key={showcase.projectName}
+            isOwner={showcase.isOwner}
+            projectDescription={showcase.projectDescription}
+            projectImages={showcase.projectImages}
+            projectName={showcase.projectName}
+            projectReleaseUrl={showcase.projectReleaseUrl}
+            projectRepoUrl={showcase.projectRepoUrl}
+            windowSize={size.width}
+            stackList={showcase.stackList}
+          />
+        ))}
+        {portfolioShowcases.map((showcase) => (
+          <PortfolioCard
+            key={showcase.projectName}
+            isOwner={showcase.isOwner}
+            projectDescription={showcase.projectDescription}
+            projectImages={showcase.projectImages}
+            projectName={showcase.projectName}
+            projectReleaseUrl={showcase.projectReleaseUrl}
+            projectRepoUrl={showcase.projectRepoUrl}
+            windowSize={size.width}
+            stackList={showcase.stackList}
+          />
+        ))}
+      </PortfolioShowcase>
+      <StacksList />
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const getPortfolioCases = gql`
+    query PortfolioQuery {
+      portfolioShowcases(last: 3) {
+        id
+        projectName
+        isOwner
+        projectReleaseUrl
+        projectRepoUrl
+        projectDescription {
+          text
+        }
+        projectImages {
+          desktopImage {
+            url
+          }
+          mobileImage {
+            url
+          }
+        }
+        stackList {
+          url
+        }
+      }
+    }
+  `
+
+  const { data } = await client.query({
+    query: getPortfolioCases,
+  })
+
+  return {
+    props: data,
+  }
 }

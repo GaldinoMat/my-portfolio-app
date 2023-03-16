@@ -16,68 +16,71 @@ function PortfolioCard({
   const { desktopImage, mobileImage } = projectImages
 
   return (
-    <div className="w-full lg:flex lg:flex-row lg:items-center lg:justify-center">
-      <div className="relative h-[31rem] lg:w-2/3 z-0">
+    <div className="w-full lg:w-[485px] h-[32rem] lg:flex lg:flex-row lg:items-center lg:justify-center relative group">
+      <div className="relative h-full w-full z-0">
         {windowSize < 1024 ? (
           <Image
-            className="z-0"
+            className="z-0 rounded-lg"
             src={mobileImage.url}
             fill
             alt="project-image"
           />
         ) : (
           <Image
-            className="z-0"
+            className="z-0 object-cover object-left rounded-lg"
             src={desktopImage.url}
             fill
             alt="project-image"
           />
         )}
       </div>
-      <div className="bg-[#070707] p-6 flex flex-col gap-6 lg:-ml-12 lg:z-10 lg:w-3/5 justify-center lg:justify-between">
-        <div className="flex justify-between">
-          <h4 className="text-[#481380] text-xl lg:text-3xl font-normal w-full">
-            {projectName}
-          </h4>
-          {isOwner ? (
-            <span className="text-center border border-[#481380] text-[#481380] p-3 py-1">
-              Owner
-            </span>
-          ) : (
-            <span className="text-center border border-[#481380] text-[#481380] p-3 py-1">
-              Collaborator
-            </span>
-          )}
-        </div>
-        <p className="text-sm font-normal lg:text-base">
-          {projectDescription.text}
-        </p>
-        <span>
-          <ul className="flex gap-2">
+      <div
+        className="flex w-full h-full absolute top-0 left-0 bottom-0 right-0 opacity-0 group-hover:bg-gradient-to-tr
+        group-hover:bg-onyx group-hover:opacity-100 z-0 transition-all group-hover:z-10 rounded-lg"
+      >
+        <div className="p-6 flex w-full h-full flex-col gap-6 justify-center lg:justify-between lg:items-start">
+          <div className="flex w-full justify-between">
+            <h4 className="text-silver text-xl lg:text-3xl font-normal w-full">
+              {projectName}
+            </h4>
+            {isOwner ? (
+              <span className="text-center border border-silver text-silver p-3 py-1 rounded-md">
+                Owner
+              </span>
+            ) : (
+              <span className="text-center border border-silver text-silver p-3 py-1 rounded-md">
+                Collaborator
+              </span>
+            )}
+          </div>
+          <p className="text-sm font-normal lg:text-base text-silver">
+            {projectDescription.text}
+          </p>
+          <ul className="flex flex-wrap gap-2">
             {stackList.map((stack) => (
               <li className="relative w-8 h-8" key={stack.url}>
                 <Image src={stack.url} alt="icon" fill />
               </li>
             ))}
           </ul>
-        </span>
-        <div className="lg:flex lg:justify-center lg:gap-6">
-          <Link
-            className="text-center border border-[#481380] text-[#481380] w-[10rem] py-2 mx-auto lg:mx-0"
-            target="_blank"
-            href={projectRepoUrl}
-          >
-            Repository
-          </Link>
-          {projectReleaseUrl && (
+          <div className="flex gap-6 w-full lg:gap-6">
             <Link
-              className="text-center border border-[#481380] text-[#481380] w-[10rem] py-2 mx-auto lg:mx-0"
+              className="text-center border border-silver text-silver w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
               target="_blank"
-              href={projectReleaseUrl}
+              href={projectRepoUrl}
             >
-              Check it out!
+              Repository
             </Link>
-          )}
+            {projectReleaseUrl && (
+              <Link
+                className="text-center border border-silver text-silver w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
+                target="_blank"
+                href={projectReleaseUrl}
+              >
+                Check it out!
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

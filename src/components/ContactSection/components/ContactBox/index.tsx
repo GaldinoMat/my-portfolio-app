@@ -4,7 +4,7 @@ import JavascriptCode from "public/JavaScript-code.jpg"
 
 function ContactBox() {
   return (
-    <div className="px-4 lg:px-12 py-4 bg-[#191919] h-full lg:w-1/2 lg:h-[32.5rem] rounded-md flex flex-col gap-5">
+    <div className="px-4 lg:px-12 py-4 bg-onyx shadow-md shadow-blue-munsell h-full lg:w-1/2 lg:h-[32.5rem] rounded-lg flex flex-col gap-5">
       <div className="w-full h-52 relative overflow-hidden rounded-sm">
         <Image
           src={JavascriptCode}
@@ -13,7 +13,7 @@ function ContactBox() {
           className="focus:scale-105 hover:scale-105 transition-all"
         />
       </div>
-      <ul className="text-lg flex flex-col gap-4">
+      <ul className="text-lg flex flex-col gap-4 text-silver">
         <li>
           <h4 className="text-2xl font-medium mb-3">Mateus Galdino</h4>
           <p className="text-xl">Front end developer</p>

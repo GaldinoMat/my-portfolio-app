@@ -7,7 +7,7 @@ import type { GetServerSideProps } from "next"
 import React, { useEffect, useState } from "react"
 import client from "../../../apolloClient"
 
-function useWindowSize() {
+export function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
@@ -34,9 +34,27 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
   const size = useWindowSize()
 
   return (
-    <div className="w-full py-20 px-8 flex flex-col gap-6 lg:max-w-7xl lg:mx-auto">
-      <PageTitle prefix="My" suffix="portfolio" />
+    <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18">
+      <div className="flex flex-col gap-2">
+        <PageTitle prefix="My" suffix="portfolio." />
+        <p className="text-lg lg:text-xl font-medium">
+          From Concept to Reality: My journey as a developer
+        </p>
+      </div>
       <PortfolioShowcase>
+        {portfolioShowcases.map((showcase) => (
+          <PortfolioCard
+            key={showcase.projectName}
+            isOwner={showcase.isOwner}
+            projectDescription={showcase.projectDescription}
+            projectImages={showcase.projectImages}
+            projectName={showcase.projectName}
+            projectReleaseUrl={showcase.projectReleaseUrl}
+            projectRepoUrl={showcase.projectRepoUrl}
+            windowSize={size.width}
+            stackList={showcase.stackList}
+          />
+        ))}
         {portfolioShowcases.map((showcase) => (
           <PortfolioCard
             key={showcase.projectName}

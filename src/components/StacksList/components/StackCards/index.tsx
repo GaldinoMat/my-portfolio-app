@@ -10,7 +10,8 @@ function StackCards({ cardsInfo }: StackCardsType) {
         <Card
           key={cardInfo.alt}
           logoSource={cardInfo.logoSource}
-          text={cardInfo.text}
+          title={cardInfo.title}
+          subtitle={cardInfo.subtitle}
           alt={cardInfo.alt}
         />
       ))}
