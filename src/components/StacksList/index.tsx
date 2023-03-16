@@ -24,7 +24,7 @@ function StacksList() {
     <div className="flex flex-col gap-8 w-full">
       <PageTitle prefix="My" suffix="stacks." />
       <div className="flex flex-col lg:flex-row gap-6">
-        <div className="bg-[#212121] shadow-md text-center rounded-lg lg:h-[17.5rem] lg:w-80">
+        <div className="bg-[#212121] dark:bg-[#373737] shadow-md text-center rounded-lg lg:h-[17.5rem] lg:w-80">
           <ul className="flex flex-col items-center lg:h-auto w-full">
             <StackToggle
               id="Languages"

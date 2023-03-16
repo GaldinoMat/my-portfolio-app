@@ -25,6 +25,10 @@ function Contact() {
           <Image
             src={JavascriptCode}
             fill
+            priority
+            sizes="(max-width: 768px) 100%,
+              (max-width: 1200px) 100%,
+              100%"
             alt="contact-me-image"
             className="focus:scale-105 hover:scale-105 transition-all rounded-lg"
           />

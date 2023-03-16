@@ -19,18 +19,8 @@ function Card({
         stackCard && "bg-[#292929] dark:bg-[#373737]"
       } shadow-md lg:[&:not(:last-child)]:flex-1 text-center rounded-lg h-80 w-full lg:w-80 flex flex-col items-start justify-center lg:justify-between lg:p-9 gap-2 px-6`}
     >
-      <div
-        className={`h-14 w-14 text-center flex items-center justify-center ${
-          stackCard && "bg-slate-100 dark:bg-[#373737] rounded-full"
-        } `}
-      >
-        <Image
-          className={`${stackCard && "rounded-full"} `}
-          src={logoSource}
-          alt={alt}
-          width={40}
-          height={40}
-        />
+      <div>
+        <Image src={logoSource} alt={alt} width={40} height={40} />
       </div>
       <p
         className={`text-2xl lg:text-xl text-left ${

@@ -28,6 +28,10 @@ function PortfolioCard({
             className="z-0 rounded-lg"
             src={mobileImage.url}
             fill
+            priority
+            sizes="(max-width: 768px) 100%,
+              (max-width: 1200px) 100%,
+              100%"
             alt="project-image"
           />
         ) : (
@@ -35,6 +39,10 @@ function PortfolioCard({
             className="z-0 object-cover object-left rounded-lg"
             src={desktopImage.url}
             fill
+            priority
+            sizes="(max-width: 768px) 100%,
+              (max-width: 1200px) 100%,
+              100%"
             alt="project-image"
           />
         )}
@@ -65,7 +73,14 @@ function PortfolioCard({
           <ul className="flex flex-wrap gap-2">
             {stackList.map((stack) => (
               <li className="relative w-8 h-8" key={stack.url}>
-                <Image src={stack.url} alt="icon" fill />
+                <Image
+                  src={stack.url}
+                  alt="icon"
+                  fill
+                  sizes="(max-width: 768px) 3.125rem,
+              (max-width: 1200px) 2.5rem,
+              2rem"
+                />
               </li>
             ))}
           </ul>

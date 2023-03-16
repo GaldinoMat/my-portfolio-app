@@ -23,6 +23,9 @@ function ThemeChanger() {
       <Image
         src={theme === "light" ? MoonIcon : SunIcon}
         alt="theme-icon"
+        sizes="(max-width: 768px) 100%,
+              (max-width: 1200px) 100%,
+              100%"
         fill
       />
     </button>
