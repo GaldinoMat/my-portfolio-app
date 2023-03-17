@@ -27,7 +27,6 @@ const languages = [
     title: "Typescript",
     subtitle:
       "Superset of JavaScript with added type annotations for enhanced reliability.",
-
     alt: "typescript-icon",
   },
   {
@@ -35,7 +34,6 @@ const languages = [
     title: "C#",
     subtitle:
       "Object-oriented programming language used to build Windows desktop and web applications.",
-
     alt: "csharp-icon",
   },
 ]
@@ -45,7 +43,6 @@ const frameworks = [
     title: "React.js",
     subtitle:
       "JavaScript library used to build dynamic and interactive user interfaces.",
-
     alt: "react.js-icon",
   },
   {
@@ -53,14 +50,12 @@ const frameworks = [
     title: "Next.js",
     subtitle:
       "Framework built on top of React for server-side rendering and static site generation.",
-
     alt: "next.js-icon",
   },
   {
     logoSource: TailwindIcon,
     title: "Tailwind",
     subtitle: " Utility-first CSS framework for rapid UI development.",
-
     alt: "tailwind-icon",
   },
   {
@@ -68,7 +63,6 @@ const frameworks = [
     title: ".NET",
     subtitle:
       "Framework for building Windows desktop and web applications, using C# and other languages.",
-
     alt: ".NET-icon",
   },
 ]
@@ -78,15 +72,13 @@ const frontend = [
     title: "Sass/Less",
     subtitle:
       "CSS pre-processors that add functionality and efficiency to stylesheet authoring.",
-
     alt: "sass/less-icon",
   },
   {
     logoSource: GraphQlIcon,
-    title: "GraphQL (Apollo)",
+    title: "GraphQL (Apollo Client)",
     subtitle:
       "Client-side library for using GraphQL in JavaScript applications.",
-
     alt: "graphQL-icon",
   },
   {
@@ -94,7 +86,6 @@ const frontend = [
     title: "Jest/React Testing Library",
     subtitle:
       "JavaScript testing frameworks for testing React components and applications.",
-
     alt: "jest-icon",
   },
   {
@@ -102,7 +93,6 @@ const frontend = [
     title: "Redux",
     subtitle:
       "Predictable state container for JavaScript apps, making state management more organized and maintainable.",
-
     alt: "redux-icon",
   },
   {
@@ -110,7 +100,6 @@ const frontend = [
     title: "Bundlers (Vite/Webpack)",
     subtitle:
       "Tools that bundle, optimize and transform JavaScript and CSS assets for use in the browser.",
-
     alt: "vite-icon",
   },
 ]
@@ -120,24 +109,21 @@ const backend = [
     title: "Node",
     subtitle:
       "JavaScript runtime for building scalable server-side applications.",
-
     alt: "node-icon",
-  },
-  {
-    logoSource: GraphQlIcon,
-    title: "GraphQL (Apollo)",
-    subtitle:
-      "Server-side library for implementing GraphQL APIs in JavaScript applications.",
-
-    alt: "graphQL-icon",
   },
   {
     logoSource: MongoIcon,
     title: "MongoDB",
     subtitle:
       "Document-based NoSQL database used for storing and retrieving large amounts of data in real-time.",
-
     alt: "mongoDB-icon",
+  },
+  {
+    logoSource: GraphQlIcon,
+    title: "GraphQL (Apollo Server)",
+    subtitle:
+      "Server-side library for implementing GraphQL APIs in JavaScript applications.",
+    alt: "graphQL-icon",
   },
 ]
 const gamedev = [
@@ -146,7 +132,6 @@ const gamedev = [
     title: "Unity",
     subtitle:
       "Cross-platform game engine for building 2D and 3D games for desktop, mobile, and console platforms.",
-
     alt: "unity-icon",
   },
   {
@@ -154,7 +139,6 @@ const gamedev = [
     title: "Unreal",
     subtitle:
       "Game engine used for developing high-fidelity 3D games with advanced graphics and physics simulations.",
-
     alt: "unreal-icon",
   },
 ]

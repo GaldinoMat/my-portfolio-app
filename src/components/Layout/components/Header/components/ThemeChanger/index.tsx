@@ -3,6 +3,7 @@ import Image from "next/image"
 import React, { useEffect, useState } from "react"
 import SunIcon from "public/sun-svgrepo-com.svg"
 import MoonIcon from "public/new-moon-svgrepo-com.svg"
+import { Theme, ToastContainer } from "react-toastify"
 
 function ThemeChanger() {
   const [mounted, setMounted] = useState(false)
@@ -27,6 +28,18 @@ function ThemeChanger() {
               (max-width: 1200px) 100%,
               100%"
         fill
+      />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme={theme as Theme}
       />
     </button>
   )

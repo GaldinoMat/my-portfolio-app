@@ -14,9 +14,9 @@ function Card({
       className={`${
         first
           ? "bg-[#292929] dark:bg-slate-100"
+          : stackCard
+          ? "bg-[#292929] dark:bg-[#373737]"
           : "bg-slate-100 dark:bg-[#373737]"
-      } ${
-        stackCard && "bg-[#292929] dark:bg-[#373737]"
       } shadow-md lg:[&:not(:last-child)]:flex-1 text-center rounded-lg h-80 w-full lg:w-80 flex flex-col items-start justify-center lg:justify-between lg:p-9 gap-2 px-6`}
     >
       <div>
