@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import React from "react"
+import React, { useState } from "react"
 import { ShowcaseType } from "./typings/types"
 
 function PortfolioCard({
@@ -14,13 +14,22 @@ function PortfolioCard({
   stackList,
   single = false,
 }: ShowcaseType) {
+  const [isMobileOpen, setisMobileOpen] = useState(false)
   const { desktopImage, mobileImage } = projectImages
+
+  const handlePortfolioClick = (bool: boolean) => {
+    if (windowSize < 1024) setisMobileOpen(bool)
+  }
 
   return (
     <div
       className={`w-full ${
         single ? "lg:w-full" : "lg:w-[485px]"
       } h-[32rem] shadow-md lg:flex lg:flex-row lg:items-center lg:justify-center relative group`}
+      onClick={() => handlePortfolioClick(!isMobileOpen)}
+      onKeyDown={() => handlePortfolioClick(true)}
+      tabIndex={0}
+      role="button"
     >
       <div className="relative h-full w-full z-0">
         {windowSize < 1024 ? (
@@ -36,7 +45,7 @@ function PortfolioCard({
           />
         ) : (
           <Image
-            className="z-0 object-cover object-left rounded-lg"
+            className="z-0 object-cover object-left-bottom rounded-lg"
             src={desktopImage.url}
             fill
             priority
@@ -47,7 +56,16 @@ function PortfolioCard({
           />
         )}
       </div>
-      <div className="flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 group-hover:bg-[#212121] dark:group-hover:bg-[#373737] group-hover:opacity-100 z-0 transition-all group-hover:z-10 rounded-lg">
+      <div
+        className={`flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 z-0 transition-all group-hover:z-10 rounded-lg
+        ${
+          windowSize > 1024
+            ? "group-hover:bg-[#212121] dark:group-hover:bg-[#373737] group-hover:opacity-100"
+            : isMobileOpen
+            ? "bg-[#212121] dark:bg-[#373737] opacity-100"
+            : ""
+        }`}
+      >
         <div className="p-6 flex w-full h-full flex-col gap-6 justify-center lg:justify-between lg:items-start">
           <div className="flex w-full justify-between">
             <h4 className="text-slate-100 text-xl lg:text-3xl font-normal w-full">
