@@ -7,7 +7,9 @@ import { Theme, ToastContainer } from "react-toastify"
 
 function ThemeChanger() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { systemTheme, theme, setTheme } = useTheme()
+
+  const currentTheme = theme === "system" ? systemTheme : theme
 
   useEffect(() => {
     setMounted(true)
@@ -22,7 +24,7 @@ function ThemeChanger() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <Image
-        src={theme === "light" ? MoonIcon : SunIcon}
+        src={currentTheme === "light" ? MoonIcon : SunIcon}
         alt="theme-icon"
         sizes="(max-width: 768px) 100%,
               (max-width: 1200px) 100%,
