@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout"
 import PageTitle from "@/components/PageTitle"
 import PortfolioCard from "@/components/PortfolioCard"
 import PortfolioShowcase from "@/components/PortfolioShowcase"
@@ -42,29 +43,31 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
-        <PageTitle
-          prefix="My"
-          suffix="portfolio."
-          subtitleText="From Concept to Reality: My journey as a developer"
-        />
-        <PortfolioShowcase>
-          {portfolioShowcases.map((showcase) => (
-            <PortfolioCard
-              single={false}
-              key={showcase.projectName}
-              isOwner={showcase.isOwner}
-              projectDescription={showcase.projectDescription}
-              projectImages={showcase.projectImages}
-              projectName={showcase.projectName}
-              projectReleaseUrl={showcase.projectReleaseUrl}
-              projectRepoUrl={showcase.projectRepoUrl}
-              windowSize={size.width}
-              stackList={showcase.stackList}
-            />
-          ))}
-        </PortfolioShowcase>
-      </div>
+      <Layout>
+        <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
+          <PageTitle
+            prefix="My"
+            suffix="portfolio."
+            subtitleText="From Concept to Reality: My journey as a developer"
+          />
+          <PortfolioShowcase>
+            {portfolioShowcases.map((showcase) => (
+              <PortfolioCard
+                single={false}
+                key={showcase.projectName}
+                isOwner={showcase.isOwner}
+                projectDescription={showcase.projectDescription}
+                projectImages={showcase.projectImages}
+                projectName={showcase.projectName}
+                projectReleaseUrl={showcase.projectReleaseUrl}
+                projectRepoUrl={showcase.projectRepoUrl}
+                windowSize={size.width}
+                stackList={showcase.stackList}
+              />
+            ))}
+          </PortfolioShowcase>
+        </div>
+      </Layout>
     </>
   )
 }

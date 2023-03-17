@@ -6,7 +6,7 @@ import { StackCardsType } from "./typings/types"
 
 function StackCards({ cardsInfo }: StackCardsType) {
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial>
       <div className="flex flex-col lg:flex-row lg:flex-wrap lg:max-w-3xl gap-6">
         {cardsInfo.map((cardInfo: InfoCardType) => (
           <motion.div
@@ -15,7 +15,7 @@ function StackCards({ cardsInfo }: StackCardsType) {
             exit={{ opacity: 0 }}
             transition={{
               type: "spring",
-              stiffness: 100,
+              stiffness: 125,
               damping: 20,
             }}
             key={cardInfo.alt}
