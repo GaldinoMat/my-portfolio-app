@@ -1,8 +1,8 @@
 {
   "Home": {
     "bannerIntro": "Hello, I am ",
-    "changingTitle": "Um desenvolvedor <span className='text-[#A6A6A6] after:content-['|'] after:animate-blinking'>{displayedStack}</span>",
-    "intro": "Olá e bem-vindo!",
+    "changingTitle": "A <span className='text-[#A6A6A6] after:content-['|'] after:animate-blinking'>{displayedStack}</span> developer",
+    "intro": "Hello and welcome!",
     "bannerDisclaimer": "With a passion for front-end development, e-commerce solutions, and immersive gaming experiences, I strive to create memorable and engaging digital solutions.",
     "collaborationDisclaimer": "Let's collaborate to bring your project to life!",
     "contactCTA": "Let's talk!"
