@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "bannerIntro": "Olá, eu sou ",
+    "changingTitle": "Um desenvolvedor <span className='text-[#A6A6A6] after:content-['|'] after:animate-blinking'>{displayedStack}</span>",
+    "intro": "Olá e bem-vindo!",
+    "bannerDisclaimer": "Com paixão pelo desenvolvimento front-end, soluções de e-commerce e experiências imersivas de jogos, eu me esforço para criar soluções digitais memoráveis e envolventes.",
+    "collaborationDisclaimer": "Vamos colaborar e trazer seu projeto a vida!"
+  }
+}
