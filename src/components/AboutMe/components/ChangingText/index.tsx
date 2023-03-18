@@ -1,14 +1,39 @@
 import { useLocale } from "@/hooks/useLocale"
 import React, { useEffect, useMemo, useState } from "react"
+import { renderToStaticMarkup } from "react-dom/server"
+import parse from "html-react-parser"
 
 function ChangingText() {
-  const stacks = useMemo(() => ["web", "game", "Front-end"], [])
+  const { messages, locale } = useLocale()
+
+  const stacks = useMemo(
+    () =>
+      locale === "pt"
+        ? ["web", "de jogos", "front-end"]
+        : ["web", "game", "front-end"],
+    [locale]
+  )
   const [selectedStack, setSelectedStack] = useState(stacks[0])
   const [typing, setTyping] = useState("isTyping")
 
   const [displayedStack, setDisplayedStack] = useState("")
 
-  const { messages } = useLocale()
+  const spanElement = React.createElement(
+    "span",
+    {
+      className: "text-[#A6A6A6] after:content-['|'] after:animate-blinking",
+    },
+    displayedStack
+  )
+
+  const changingTitle = messages.Home?.changingTitle
+    ? parse(
+        messages.Home?.changingTitle.replace(
+          "{displayedStack}",
+          renderToStaticMarkup(spanElement)
+        )
+      )
+    : ""
 
   const sleep = (ms: number) =>
     new Promise((resolve) => {
@@ -44,10 +69,7 @@ function ChangingText() {
 
   return (
     <div>
-      <p
-        className="text-3xl lg:text-6xl font-medium"
-        dangerouslySetInnerHTML={{ __html: messages.Home?.changingTitle }}
-      />
+      <p className="text-3xl lg:text-6xl font-medium">{changingTitle}</p>
     </div>
   )
 }
