@@ -7,6 +7,7 @@ import PortfolioShowcase from "@/components/PortfolioShowcase"
 import ServicesList from "@/components/ServicesList"
 import StacksList from "@/components/StacksList"
 import { PortfolioTypes } from "@/components/typings/types"
+import { useLocale } from "@/hooks/useLocale"
 import { gql } from "@apollo/client"
 import Head from "next/head"
 import { GetServerSideProps } from "next/types"
@@ -39,6 +40,8 @@ export function useWindowSize() {
 export default function Home({ portfolioShowcases }: PortfolioTypes) {
   const size = useWindowSize()
 
+  const { messages } = useLocale()
+
   return (
     <>
       <Head>
@@ -52,7 +55,10 @@ export default function Home({ portfolioShowcases }: PortfolioTypes) {
         <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18">
           <ServicesList />
           <div className="w-full flex flex-col gap-8 lg:gap-18">
-            <PageTitle prefix="Last" suffix="cases." />
+            <PageTitle
+              prefix={messages.Home?.homeCasesPrefix}
+              suffix={messages.Home?.homeCasesSuffix}
+            />
             <PortfolioShowcase>
               {portfolioShowcases.map((showcase) => (
                 <PortfolioCard
@@ -69,7 +75,7 @@ export default function Home({ portfolioShowcases }: PortfolioTypes) {
                 />
               ))}
             </PortfolioShowcase>
-            <CTAButton href="/portfolio" text="View all cases!" />
+            <CTAButton href="/portfolio" text={messages.Home?.casesCTA} />
           </div>
           <StacksList />
         </div>

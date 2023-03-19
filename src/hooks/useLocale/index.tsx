@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import {
   createContext,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -10,7 +11,7 @@ import {
 
 type LocaleContextType = {
   locale: string | undefined
-  secondLocale: string | undefined
+  secondLocale: string
   messages: LocaleMessages
 }
 
@@ -27,44 +28,37 @@ const LocaleContext = createContext<LocaleContextType>({
 })
 
 export function LocaleProvider({ children }: LocaleProviderType) {
-  const router = useRouter()
-
-  const { locales } = router
-
-  const [locale, setLocale] = useState(router.locale)
+  const { locale, locales, events } = useRouter()
 
   const [secondLocale, setSecondLocale] = useState(
-    locales?.find((cur) => cur !== locale)
+    locales?.find((cur) => cur !== locale) as string
   )
   const [messages, setMessages] = useState<LocaleMessages>({})
 
-  useEffect(() => {
-    const handleLocaleChange = async () => {
-      setLocale(router.locale)
-      setSecondLocale(locales?.find((cur) => cur !== locale))
+  const handleLocaleChange = useCallback(async () => {
+    setSecondLocale(locales?.find((cur) => cur !== locale) as string)
 
-      try {
-        const data = await fetch(
-          `${window.location.origin}/locales/${locale}.json`
-        ).then((resp) => {
-          return resp.json()
-        })
-        setMessages(data)
-      } catch (error) {
-        setMessages({})
-        console.error(`Error loading messages for locale ${locale}: ${error}`)
-        setMessages({})
-      }
+    try {
+      const data = await fetch(
+        `${window.location.origin}/locales/${locale}.json`
+      ).then((resp) => {
+        return resp.json()
+      })
+      setMessages(data)
+    } catch (error) {
+      console.error(`Error loading messages for locale ${locale}: ${error}`)
+      setMessages({})
     }
+  }, [locale, locales])
 
+  useEffect(() => {
     handleLocaleChange()
-
-    router.events.on("routeChangeComplete", handleLocaleChange)
+    events.on("routeChangeComplete", handleLocaleChange)
 
     return () => {
-      router.events.off("routeChangeComplete", handleLocaleChange)
+      events.off("routeChangeComplete", handleLocaleChange)
     }
-  }, [locale, locales, router])
+  }, [events, handleLocaleChange])
 
   const contextValue = useMemo(
     () => ({ locale, messages, secondLocale }),

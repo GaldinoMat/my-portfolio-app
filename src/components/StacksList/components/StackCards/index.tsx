@@ -8,7 +8,7 @@ function StackCards({ cardsInfo }: StackCardsType) {
   return (
     <AnimatePresence mode="wait" initial>
       <div className="flex flex-col lg:flex-row lg:flex-wrap lg:max-w-3xl gap-6">
-        {cardsInfo.map((cardInfo: InfoCardType) => (
+        {cardsInfo?.map((cardInfo: InfoCardType) => (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
