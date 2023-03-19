@@ -46,7 +46,11 @@
   "Portfolio": {
     "pageTitlePrefix": "My",
     "pageTitleSuffix": "portfolio.",
-    "pageSubTitle": "From Concept to Reality: My journey as a developer"
+    "pageSubTitle": "From Concept to Reality: My journey as a developer",
+    "isOwner": "Owner",
+    "isCollab": "Collaborator",
+    "ctaRepository": "Repository",
+    "ctaCheckIt": "Check it out!"
   },
   "Contact": {
     "pageTitlePrefix": "Contact",

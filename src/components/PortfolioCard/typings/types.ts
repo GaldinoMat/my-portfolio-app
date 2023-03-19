@@ -1,5 +1,6 @@
 export type ShowcaseType = {
   isOwner: boolean
+  localizations: { projectDescription: { text: string } }[]
   projectDescription: { text: string }
   projectImages: {
     desktopImage: { url: string }

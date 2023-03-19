@@ -65,6 +65,7 @@ export default function Home({ portfolioShowcases }: PortfolioTypes) {
                   single
                   key={showcase.projectName}
                   isOwner={showcase.isOwner}
+                  localizations={showcase.localizations}
                   projectDescription={showcase.projectDescription}
                   projectImages={showcase.projectImages}
                   projectName={showcase.projectName}
@@ -106,6 +107,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
         }
         stackList {
           url
+        }
+        localizations {
+          projectDescription {
+            text
+          }
+          locale
         }
       }
     }
