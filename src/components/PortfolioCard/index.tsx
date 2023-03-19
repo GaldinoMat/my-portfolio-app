@@ -22,7 +22,7 @@ function PortfolioCard({
   const { locale, messages } = useLocale()
 
   const handlePortfolioClick = (bool: boolean) => {
-    if (windowSize < 1024) setisMobileOpen(bool)
+    if (windowSize < 820) setisMobileOpen(bool)
   }
 
   return (
@@ -36,7 +36,7 @@ function PortfolioCard({
       role="button"
     >
       <div className="relative h-full w-full z-0">
-        {windowSize < 1024 ? (
+        {windowSize < 768 ? (
           <Image
             className="z-0 rounded-lg"
             src={mobileImage.url}
@@ -63,7 +63,7 @@ function PortfolioCard({
       <div
         className={`flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 z-0 transition-all group-hover:z-10 rounded-lg
         ${
-          windowSize > 1024
+          windowSize > 820
             ? "group-hover:bg-[#212121] dark:group-hover:bg-[#373737] group-hover:opacity-100"
             : isMobileOpen
             ? "bg-[#212121] dark:bg-[#373737] opacity-100"

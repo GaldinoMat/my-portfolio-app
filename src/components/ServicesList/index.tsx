@@ -8,7 +8,7 @@ function ServicesList() {
 
   return (
     <div className="flex flex-col gap-6 -mt-20 w-full">
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
+      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center lg:justify-between gap-6">
         <Card
           first
           logoSource={Desktop}
