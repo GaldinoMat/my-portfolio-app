@@ -7,8 +7,8 @@ import { StackCardsType } from "./typings/types"
 function StackCards({ cardsInfo }: StackCardsType) {
   return (
     <AnimatePresence mode="wait" initial>
-      <div className="flex flex-col lg:flex-row lg:flex-wrap lg:max-w-3xl gap-6">
-        {cardsInfo.map((cardInfo: InfoCardType) => (
+      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center lg:max-w-3xl gap-6">
+        {cardsInfo?.map((cardInfo: InfoCardType) => (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

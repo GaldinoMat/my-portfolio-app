@@ -1,32 +1,35 @@
+import { useLocale } from "@/hooks/useLocale"
 import Desktop from "public/desktop-icon.svg"
 import Card from "../Card"
 import CTAButton from "../CTAButton"
 
 function ServicesList() {
+  const { messages } = useLocale()
+
   return (
     <div className="flex flex-col gap-6 -mt-20 w-full">
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
+      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center lg:justify-between gap-6">
         <Card
           first
           logoSource={Desktop}
-          title="Front-end development"
-          subtitle="Crafting visually appealing and intuitive user interfaces with React and Next.js."
+          title={messages.Home?.serviceCardTitle1}
+          subtitle={messages.Home?.serviceCardSubtitle1}
           alt="desktop-icon"
         />
         <Card
           logoSource={Desktop}
-          title="E-commerce Development"
-          subtitle="Seamless online stores with secure payment and intuitive UX."
+          title={messages.Home?.serviceCardTitle2}
+          subtitle={messages.Home?.serviceCardSubtitle2}
           alt="ecommerce-icon"
         />
         <Card
           logoSource={Desktop}
-          title="Game Development"
-          subtitle="Immersive experiences with engaging mechanics, graphics, and user interfaces."
+          title={messages.Home?.serviceCardTitle3}
+          subtitle={messages.Home?.serviceCardSubtitle3}
           alt="joystick-icon"
         />
       </div>
-      <CTAButton text="Check out my work!" href="/portfolio" />
+      <CTAButton text={messages.Home?.servicesCTA} href="/portfolio" />
     </div>
   )
 }

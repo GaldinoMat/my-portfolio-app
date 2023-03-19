@@ -19,7 +19,7 @@ function ThemeChanger() {
 
   return (
     <button
-      className="relative z-30 h--7 w-7"
+      className="relative z-30 h-7 w-7"
       type="button"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >

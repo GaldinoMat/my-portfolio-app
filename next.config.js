@@ -7,6 +7,10 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: ["media.graphassets.com"],
   },
+  i18n: {
+    locales: ["en", "pt"],
+    defaultLocale: "en",
+  },
 }
 
 module.exports = nextConfig

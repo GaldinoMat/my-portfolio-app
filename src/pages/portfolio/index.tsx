@@ -3,6 +3,7 @@ import PageTitle from "@/components/PageTitle"
 import PortfolioCard from "@/components/PortfolioCard"
 import PortfolioShowcase from "@/components/PortfolioShowcase"
 import { PortfolioTypes } from "@/components/typings/types"
+import { useLocale } from "@/hooks/useLocale"
 import { gql } from "@apollo/client"
 import type { GetServerSideProps } from "next"
 import Head from "next/head"
@@ -35,6 +36,8 @@ export function useWindowSize() {
 function Portfolio({ portfolioShowcases }: PortfolioTypes) {
   const size = useWindowSize()
 
+  const { messages } = useLocale()
+
   return (
     <>
       <Head>
@@ -44,11 +47,11 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
+        <div className="w-full md:max-w-xl lg:max-w-5xl mx-auto px-8 md:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
           <PageTitle
-            prefix="My"
-            suffix="portfolio."
-            subtitleText="From Concept to Reality: My journey as a developer"
+            prefix={messages.Portfolio?.pageTitlePrefix}
+            suffix={messages.Portfolio?.pageTitleSuffix}
+            subtitleText={messages.Portfolio?.pageSubTitle}
           />
           <PortfolioShowcase>
             {portfolioShowcases.map((showcase) => (
@@ -56,6 +59,7 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
                 single={false}
                 key={showcase.projectName}
                 isOwner={showcase.isOwner}
+                localizations={showcase.localizations}
                 projectDescription={showcase.projectDescription}
                 projectImages={showcase.projectImages}
                 projectName={showcase.projectName}
@@ -94,6 +98,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
         }
         stackList {
           url
+        }
+        localizations {
+          projectDescription {
+            text
+          }
+          locale
         }
       }
     }

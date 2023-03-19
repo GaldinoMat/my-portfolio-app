@@ -1,3 +1,4 @@
+import { useLocale } from "@/hooks/useLocale"
 import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
@@ -13,12 +14,15 @@ function PortfolioCard({
   windowSize = 0,
   stackList,
   single = false,
+  localizations,
 }: ShowcaseType) {
   const [isMobileOpen, setisMobileOpen] = useState(false)
   const { desktopImage, mobileImage } = projectImages
 
+  const { locale, messages } = useLocale()
+
   const handlePortfolioClick = (bool: boolean) => {
-    if (windowSize < 1024) setisMobileOpen(bool)
+    if (windowSize < 820) setisMobileOpen(bool)
   }
 
   return (
@@ -32,7 +36,7 @@ function PortfolioCard({
       role="button"
     >
       <div className="relative h-full w-full z-0">
-        {windowSize < 1024 ? (
+        {windowSize < 768 ? (
           <Image
             className="z-0 rounded-lg"
             src={mobileImage.url}
@@ -59,7 +63,7 @@ function PortfolioCard({
       <div
         className={`flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 z-0 transition-all group-hover:z-10 rounded-lg
         ${
-          windowSize > 1024
+          windowSize > 820
             ? "group-hover:bg-[#212121] dark:group-hover:bg-[#373737] group-hover:opacity-100"
             : isMobileOpen
             ? "bg-[#212121] dark:bg-[#373737] opacity-100"
@@ -73,11 +77,11 @@ function PortfolioCard({
             </h4>
             {isOwner ? (
               <span className="text-center border border-slate-100 text-slate-100 p-3 py-1 rounded-md">
-                Owner
+                {messages.Portfolio?.isOwner}
               </span>
             ) : (
               <span className="text-center border border-slate-100 text-slate-100 p-3 py-1 rounded-md">
-                Collaborator
+                {messages.Portfolio?.isCollab}
               </span>
             )}
           </div>
@@ -86,7 +90,9 @@ function PortfolioCard({
               single && "w-2/5"
             } font-normal lg:text-base text-slate-100`}
           >
-            {projectDescription.text}
+            {locale === "pt"
+              ? localizations[0].projectDescription.text
+              : projectDescription.text}
           </p>
           <ul className="flex flex-wrap gap-2">
             {stackList.map((stack) => (
@@ -108,7 +114,7 @@ function PortfolioCard({
               target="_blank"
               href={projectRepoUrl}
             >
-              Repository
+              {messages.Portfolio?.ctaRepository}
             </Link>
             {projectReleaseUrl && (
               <Link
@@ -116,7 +122,7 @@ function PortfolioCard({
                 target="_blank"
                 href={projectReleaseUrl}
               >
-                Check it out!
+                {messages.Portfolio?.ctaCheckIt}
               </Link>
             )}
           </div>
