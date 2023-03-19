@@ -6,8 +6,11 @@ import Head from "next/head"
 import JavascriptCode from "public/JavaScript-code.jpg"
 import Image from "next/image"
 import Layout from "@/components/Layout"
+import { useLocale } from "@/hooks/useLocale"
 
 function Contact() {
+  const { messages } = useLocale()
+
   return (
     <>
       <Head>
@@ -19,9 +22,9 @@ function Contact() {
       <Layout>
         <div className="w-full lg:max-w-5xl lg:mx-auto px-8 lg:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
           <PageTitle
-            prefix="Contact"
-            suffix="me."
-            subtitleText="Send me an email!"
+            prefix={messages.Contact?.pageTitlePrefix}
+            suffix={messages.Contact?.pageTitleSuffix}
+            subtitleText={messages.Contact?.pageSubTitle}
           />
           <div className="w-full h-52 lg:h-96 relative overflow-hidden rounded-lg shadow-md">
             <Image

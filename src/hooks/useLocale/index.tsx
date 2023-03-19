@@ -19,6 +19,7 @@ type LocaleProviderType = {
   children: ReactNode
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type LocaleMessages = Record<string, any>
 
 const LocaleContext = createContext<LocaleContextType>({
@@ -46,6 +47,7 @@ export function LocaleProvider({ children }: LocaleProviderType) {
       })
       setMessages(data)
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(`Error loading messages for locale ${locale}: ${error}`)
       setMessages({})
     }

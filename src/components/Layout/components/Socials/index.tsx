@@ -2,19 +2,22 @@ import LinkedinLogo from "public/linkedin-logo.svg"
 import GithubLogo from "public/github-icon.svg"
 import InstagramLogo from "public/instagram-logo.svg"
 import Link from "next/link"
+import { useLocale } from "@/hooks/useLocale"
 import SocialLink from "./components"
 
 function Socials() {
+  const { messages } = useLocale()
+
   return (
     <section className="w-full p-6 flex flex-col gap-4 bg-[#212121] text-slate-100">
       <div className="text-center flex justify-center gap-4">
-        {["Home", "Portfolio", "Contact"].map((item) => (
-          <Link
-            href={`${item === "Home" ? "/" : item.toLowerCase()}`}
-            key={item}
-            className="text-base"
-          >
-            {item}
+        {[
+          ["Home", "/"],
+          [messages.Navigation?.navPortfolio, "portfolio"],
+          [messages.Navigation?.navContact, "contact"],
+        ].map(([title, url]) => (
+          <Link href={url} key={title} className="text-base">
+            {title}
           </Link>
         ))}
       </div>
@@ -32,7 +35,7 @@ function Socials() {
         <SocialLink alt="instagram-icon" href="/" logoSource={InstagramLogo} />
       </div>
       <div className="text-center">
-        <p>© 2023 Mateus Galdino | Made with Next.JS and TailwindCSS</p>
+        <p>© 2023 Mateus Galdino | {messages.Socials?.socialsCopyright}</p>
       </div>
     </section>
   )

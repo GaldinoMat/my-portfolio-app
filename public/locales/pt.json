@@ -1,4 +1,11 @@
 {
+  "Navigation": {
+    "navPortfolio": "Portfólio",
+    "navContact": "Contato"
+  },
+  "Socials": {
+    "socialsCopyright": "Feito com Next.JS e TailwindCSS"
+  },
   "Home": {
     "bannerIntro": "Olá, eu sou ",
     "changingTitle": "Desenvolvedor <span className='text-[#A6A6A6] after:content-[`|`] after:animate-blinking'>{displayedStack}</span>",
@@ -36,5 +43,23 @@
     "backEndSubtitle3": "Biblioteca do lado do servidor para implementar APIs GraphQL em aplicativos JavaScript.",
     "gameSubtitle1": "Motor de jogo multiplataforma para construção de jogos 2D e 3D para plataformas desktop, móveis e de console.",
     "gameSubtitle2": "Motor de jogo usado para desenvolver jogos 3D de alta fidelidade com simulações avançadas de gráficos e física."
+  },
+  "Portfolio": {
+    "pageTitlePrefix": "Meu",
+    "pageTitleSuffix": "portfólio.",
+    "pageSubTitle": "Da ideia à realidade: Minha jornada como desenvolvedor"
+  },
+  "Contact": {
+    "pageTitlePrefix": "Entre",
+    "pageTitleSuffix": "em contato.",
+    "pageSubTitle": "Me mande um email!",
+    "country": "Brasil",
+    "emailDisclaimer": "Você também pode me encontrar em:",
+    "socialsDisclaimer": "Não deixe de conferir minhas redes sociais!",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "Seu email",
+    "subjectPlaceholder": "Assunto",
+    "messagePlaceholder": "Escreva sua mensagem aqui",
+    "buttonCTA": "Enviar!"
   }
 }
