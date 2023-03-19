@@ -6,13 +6,10 @@ import parse from "html-react-parser"
 function ChangingText() {
   const { messages, locale } = useLocale()
 
-  const stacks = useMemo(
-    () =>
-      locale === "pt"
-        ? ["web", "de jogos", "front-end"]
-        : ["web", "game", "front-end"],
-    [locale]
-  )
+  const stacks = useMemo(() => {
+    return ["web", "e-commerce", "front-end"]
+  }, [])
+
   const [selectedStack, setSelectedStack] = useState(stacks[0])
   const [typing, setTyping] = useState("isTyping")
 
@@ -65,7 +62,7 @@ function ChangingText() {
       }
     }, 150)
     return () => clearTimeout(timeout)
-  }, [displayedStack, selectedStack, stacks, typing])
+  }, [displayedStack, locale, selectedStack, stacks, typing])
 
   return (
     <div>
