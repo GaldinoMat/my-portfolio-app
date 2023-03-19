@@ -39,41 +39,41 @@ function ContactForm() {
   }
 
   return (
-    <div className="flex items-center justify-center flex-col gap-5 w-full lg:w-1/2 py-5 rounded-lg">
+    <div className="flex w-full flex-col items-center justify-center gap-5 rounded-lg py-5 lg:w-1/2">
       <form
-        className="flex flex-col gap-4 w-full"
+        className="flex w-full flex-col gap-4"
         ref={form}
         onSubmit={(e) => sendEmail(e as unknown as Event)}
       >
         <input
-          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100  py-2 px-4 rounded-md"
+          className="mx-auto w-full rounded-md border border-[#8F8F8F] bg-transparent py-2 px-4 text-[#212121] placeholder:text-[#212121]  dark:border-slate-100 dark:text-slate-100 dark:placeholder:text-slate-100"
           placeholder={messages.Contact?.namePlaceholder}
           name="user_name"
           type="text"
           required
         />
         <input
-          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100 py-2 px-4 rounded-md"
+          className="mx-auto w-full rounded-md border border-[#8F8F8F] bg-transparent py-2 px-4 text-[#212121] placeholder:text-[#212121] dark:border-slate-100 dark:text-slate-100 dark:placeholder:text-slate-100"
           placeholder={messages.Contact?.emailPlaceholder}
           name="user_email"
           type="email"
           required
         />
         <input
-          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100 py-2 px-4 rounded-md"
+          className="mx-auto w-full rounded-md border border-[#8F8F8F] bg-transparent py-2 px-4 text-[#212121] placeholder:text-[#212121] dark:border-slate-100 dark:text-slate-100 dark:placeholder:text-slate-100"
           name="subject"
           placeholder={messages.Contact?.subjectPlaceholder}
           type="text"
           required
         />
         <textarea
-          className="w-full mx-auto border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent placeholder:text-[#212121] dark:placeholder:text-slate-100 py-2 px-4 rounded-md min-h-[16rem] lg:min-h-[16rem]"
+          className="mx-auto min-h-[16rem] w-full rounded-md border border-[#8F8F8F] bg-transparent py-2 px-4 text-[#212121] placeholder:text-[#212121] dark:border-slate-100 dark:text-slate-100 dark:placeholder:text-slate-100 lg:min-h-[16rem]"
           name="message"
           placeholder={messages.Contact?.messagePlaceholder}
           required
         />
         <button
-          className="text-center border border-[#8F8F8F] dark:border-slate-100 text-[#212121] dark:text-slate-100 bg-transparent w-[10rem] py-2 mx-auto rounded-md"
+          className="mx-auto w-[10rem] rounded-md border border-[#8F8F8F] bg-transparent py-2 text-center text-[#212121] dark:border-slate-100 dark:text-slate-100"
           type="submit"
         >
           {messages.Contact?.buttonCTA}

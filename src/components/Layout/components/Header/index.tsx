@@ -14,13 +14,13 @@ function Header() {
   const { asPath } = useRouter()
 
   return (
-    <header className="w-full bg-transparent fixed top-0 z-20">
-      <section className="py-4 max-w-xs md:max-w-xl lg:max-w-5xl mx-auto gap-3 flex justify-end items-center">
+    <header className="fixed top-0 z-20 w-full bg-transparent">
+      <section className="mx-auto flex max-w-xs items-center justify-end gap-3 py-4 md:max-w-xl lg:max-w-5xl">
         <div className="flex border border-[#212121]">
           <Link
-            className={`px-3 transition-all font-medium ${
+            className={`px-3 font-medium transition-all ${
               locale === "pt"
-                ? "bg-[#212121] dark:bg-slate-100 text-slate-100 dark:text-[#292929]"
+                ? "bg-[#212121] text-slate-100 dark:bg-slate-100 dark:text-[#292929]"
                 : "bg-slate-100 dark:bg-[#373737]"
             }`}
             href={asPath}
@@ -29,9 +29,9 @@ function Header() {
             PT
           </Link>
           <Link
-            className={`px-3 transition-all font-medium ${
+            className={`px-3 font-medium transition-all ${
               locale === "en"
-                ? "bg-[#212121] dark:bg-slate-100 text-slate-100 dark:text-[#292929]"
+                ? "bg-[#212121] text-slate-100 dark:bg-slate-100 dark:text-[#292929]"
                 : "bg-slate-100 dark:bg-[#373737]"
             }`}
             href={asPath}

@@ -17,13 +17,13 @@ function Card({
           : stackCard
           ? "bg-[#292929] dark:bg-[#373737]"
           : "bg-slate-100 dark:bg-[#373737]"
-      } shadow-md lg:[&:not(:last-child)]:flex-1 text-center rounded-lg h-80 w-full md:w-[17rem] lg:w-80 flex flex-col items-start justify-center lg:justify-between lg:p-9 gap-2 px-6`}
+      } flex h-80 w-full flex-col items-start justify-center gap-2 rounded-lg px-6 text-center shadow-md md:w-[17rem] lg:w-80 lg:justify-between lg:p-9 lg:[&:not(:last-child)]:flex-1`}
     >
       <div>
         <Image src={logoSource} alt={alt} width={40} height={40} />
       </div>
       <p
-        className={`text-2xl lg:text-xl text-left ${
+        className={`text-left text-2xl lg:text-xl ${
           first
             ? "text-slate-100 dark:text-[#292929]"
             : stackCard

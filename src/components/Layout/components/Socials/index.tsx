@@ -9,8 +9,8 @@ function Socials() {
   const { messages } = useLocale()
 
   return (
-    <section className="w-full p-6 flex flex-col gap-4 bg-[#212121] text-slate-100">
-      <div className="text-center flex justify-center gap-4">
+    <section className="flex w-full flex-col gap-4 bg-[#212121] p-6 text-slate-100">
+      <div className="flex justify-center gap-4 text-center">
         {[
           ["Home", "/"],
           [messages.Navigation?.navPortfolio, "portfolio"],
@@ -21,7 +21,7 @@ function Socials() {
           </Link>
         ))}
       </div>
-      <div className="lg:max-w-[17rem] flex justify-center mx-auto gap-4">
+      <div className="mx-auto flex justify-center gap-4 lg:max-w-[17rem]">
         <SocialLink
           alt="linkedin-icon"
           href="https://www.linkedin.com/in/mateus-galdino-silva/"

@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
 import {
   createContext,
-  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -9,19 +8,11 @@ import {
   useRef,
   useState,
 } from "react"
-
-type LocaleContextType = {
-  locale: string | undefined
-  secondLocale: string
-  messages: LocaleMessages
-}
-
-type LocaleProviderType = {
-  children: ReactNode
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type LocaleMessages = Record<string, any>
+import {
+  LocaleContextType,
+  LocaleProviderType,
+  LocaleMessages,
+} from "./typings/types"
 
 const LocaleContext = createContext<LocaleContextType>({
   locale: "",

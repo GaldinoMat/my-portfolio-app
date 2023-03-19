@@ -29,13 +29,13 @@ function PortfolioCard({
     <div
       className={`w-full ${
         single ? "lg:w-full" : "lg:w-[485px]"
-      } h-[32rem] shadow-md lg:flex lg:flex-row lg:items-center lg:justify-center relative group`}
+      } group relative h-[32rem] shadow-md lg:flex lg:flex-row lg:items-center lg:justify-center`}
       onClick={() => handlePortfolioClick(!isMobileOpen)}
       onKeyDown={() => handlePortfolioClick(true)}
       tabIndex={0}
       role="button"
     >
-      <div className="relative h-full w-full z-0">
+      <div className="relative z-0 h-full w-full">
         {windowSize < 768 ? (
           <Image
             className="z-0 rounded-lg"
@@ -49,7 +49,7 @@ function PortfolioCard({
           />
         ) : (
           <Image
-            className="z-0 object-cover object-left-bottom rounded-lg"
+            className="z-0 rounded-lg object-cover object-left-bottom"
             src={desktopImage.url}
             fill
             priority
@@ -61,26 +61,26 @@ function PortfolioCard({
         )}
       </div>
       <div
-        className={`flex w-full h-full absolute lg:p-9 top-0 left-0 bottom-0 right-0 opacity-0 z-0 transition-all group-hover:z-10 rounded-lg
+        className={`absolute top-0 left-0 bottom-0 right-0 z-0 flex h-full w-full rounded-lg opacity-0 transition-all group-hover:z-10 lg:p-9
         ${
           windowSize > 820
-            ? "group-hover:bg-[#212121] dark:group-hover:bg-[#373737] group-hover:opacity-100"
+            ? "group-hover:bg-[#212121] group-hover:opacity-100 dark:group-hover:bg-[#373737]"
             : isMobileOpen
-            ? "bg-[#212121] dark:bg-[#373737] opacity-100"
+            ? "bg-[#212121] opacity-100 dark:bg-[#373737]"
             : ""
         }`}
       >
-        <div className="p-6 flex w-full h-full flex-col gap-6 justify-center lg:justify-between lg:items-start">
+        <div className="flex h-full w-full flex-col justify-center gap-6 p-6 lg:items-start lg:justify-between">
           <div className="flex w-full justify-between">
-            <h4 className="text-slate-100 text-xl lg:text-3xl font-normal w-full">
+            <h4 className="w-full text-xl font-normal text-slate-100 lg:text-3xl">
               {projectName}
             </h4>
             {isOwner ? (
-              <span className="text-center border border-slate-100 text-slate-100 p-3 py-1 rounded-md">
+              <span className="rounded-md border border-slate-100 p-3 py-1 text-center text-slate-100">
                 {messages.Portfolio?.isOwner}
               </span>
             ) : (
-              <span className="text-center border border-slate-100 text-slate-100 p-3 py-1 rounded-md">
+              <span className="rounded-md border border-slate-100 p-3 py-1 text-center text-slate-100">
                 {messages.Portfolio?.isCollab}
               </span>
             )}
@@ -88,7 +88,7 @@ function PortfolioCard({
           <p
             className={`text-sm lg:${
               single && "w-2/5"
-            } font-normal lg:text-base text-slate-100`}
+            } font-normal text-slate-100 lg:text-base`}
           >
             {locale === "pt"
               ? localizations[0].projectDescription.text
@@ -96,7 +96,7 @@ function PortfolioCard({
           </p>
           <ul className="flex flex-wrap gap-2">
             {stackList.map((stack) => (
-              <li className="relative w-8 h-8" key={stack.url}>
+              <li className="relative h-8 w-8" key={stack.url}>
                 <Image
                   src={stack.url}
                   alt="icon"
@@ -108,9 +108,9 @@ function PortfolioCard({
               </li>
             ))}
           </ul>
-          <div className="flex gap-6 w-full lg:gap-6">
+          <div className="flex w-full gap-6 lg:gap-6">
             <Link
-              className="text-center border border-slate-100 text-slate-100 w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
+              className="mx-auto w-[10rem] rounded-md border border-slate-100 py-2 text-center text-slate-100 lg:mx-0"
               target="_blank"
               href={projectRepoUrl}
             >
@@ -118,7 +118,7 @@ function PortfolioCard({
             </Link>
             {projectReleaseUrl && (
               <Link
-                className="text-center border border-slate-100 text-slate-100 w-[10rem] py-2 mx-auto lg:mx-0 rounded-md"
+                className="mx-auto w-[10rem] rounded-md border border-slate-100 py-2 text-center text-slate-100 lg:mx-0"
                 target="_blank"
                 href={projectReleaseUrl}
               >

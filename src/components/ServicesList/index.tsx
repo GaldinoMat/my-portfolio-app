@@ -7,8 +7,8 @@ function ServicesList() {
   const { messages } = useLocale()
 
   return (
-    <div className="flex flex-col gap-6 -mt-20 w-full">
-      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center lg:justify-between gap-6">
+    <div className="-mt-20 flex w-full flex-col gap-6">
+      <div className="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center lg:justify-between">
         <Card
           first
           logoSource={Desktop}

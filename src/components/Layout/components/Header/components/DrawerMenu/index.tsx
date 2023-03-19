@@ -7,7 +7,7 @@ function DrawerMenu({ isNavOpen, setIsNavOpen }: DrawerType) {
 
   return (
     <nav
-      className={`w-full h-screen fixed bg-[#EAEAEA] dark:bg-[#212121] top-0 left-0 flex flex-col items-center justify-center gap-3 z-20 transition-all ${
+      className={`fixed top-0 left-0 z-20 flex h-screen w-full flex-col items-center justify-center gap-3 bg-[#EAEAEA] transition-all dark:bg-[#212121] ${
         !isNavOpen && "-translate-y-full"
       }`}
     >
@@ -19,7 +19,7 @@ function DrawerMenu({ isNavOpen, setIsNavOpen }: DrawerType) {
         <Link
           href={url}
           key={url}
-          className="text-[#212121] font-medium dark:text-slate-100 text-3xl"
+          className="text-3xl font-medium text-[#212121] dark:text-slate-100"
           onClick={() => setIsNavOpen(false)}
         >
           {title}

@@ -69,7 +69,7 @@ function ChangingText() {
 
   return (
     <div>
-      <p className="text-3xl lg:text-6xl font-medium">{changingTitle}</p>
+      <p className="text-3xl font-medium lg:text-6xl">{changingTitle}</p>
     </div>
   )
 }

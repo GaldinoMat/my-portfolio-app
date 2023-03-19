@@ -47,7 +47,7 @@ function Portfolio({ portfolioShowcases }: PortfolioTypes) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="w-full md:max-w-xl lg:max-w-5xl mx-auto px-8 md:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
+        <div className="lg:gap-18 mx-auto flex w-full flex-col gap-8 px-8 pt-[74.7px] md:max-w-xl md:px-0 lg:max-w-5xl">
           <PageTitle
             prefix={messages.Portfolio?.pageTitlePrefix}
             suffix={messages.Portfolio?.pageTitleSuffix}

@@ -19,7 +19,7 @@ function Layout({ children }: LayoutType) {
       <ThemeProvider attribute="class">
         <div className="bg-slate-100 dark:bg-[#292929]">
           <Header />
-          <main className="text-[#212121] dark:text-slate-100 flex flex-col gap-10 items-center justify-center pb-[74.7px]">
+          <main className="flex flex-col items-center justify-center gap-10 pb-[74.7px] text-[#212121] dark:text-slate-100">
             {children}
           </main>
           <Socials />

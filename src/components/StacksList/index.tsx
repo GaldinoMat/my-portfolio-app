@@ -24,14 +24,14 @@ function StacksList() {
   }, [selectedTab, list])
 
   return (
-    <div className="flex flex-col gap-8 w-full">
+    <div className="flex w-full flex-col gap-8">
       <PageTitle
         prefix={messages.Home?.homeStacksPrefix}
         suffix={messages.Home?.homeStacksSuffix}
       />
-      <div className="flex flex-col lg:flex-row gap-6">
-        <div className="bg-[#212121] dark:bg-[#373737] shadow-md text-center rounded-lg lg:h-[17.5rem] lg:min-w-[20rem]">
-          <ul className="flex flex-col items-center lg:h-auto w-full">
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <div className="rounded-lg bg-[#212121] text-center shadow-md dark:bg-[#373737] lg:h-[17.5rem] lg:min-w-[20rem]">
+          <ul className="flex w-full flex-col items-center lg:h-auto">
             <StackToggle
               id="Stacks"
               handleTabChange={handleTabChange}

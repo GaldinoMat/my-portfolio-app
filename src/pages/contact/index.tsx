@@ -20,13 +20,13 @@ function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="w-full md:max-w-xl lg:max-w-5xl mx-auto px-8 md:px-0 flex flex-col gap-8 lg:gap-18 pt-[74.7px]">
+        <div className="lg:gap-18 mx-auto flex w-full flex-col gap-8 px-8 pt-[74.7px] md:max-w-xl md:px-0 lg:max-w-5xl">
           <PageTitle
             prefix={messages.Contact?.pageTitlePrefix}
             suffix={messages.Contact?.pageTitleSuffix}
             subtitleText={messages.Contact?.pageSubTitle}
           />
-          <div className="w-full h-52 lg:h-96 relative overflow-hidden rounded-lg shadow-md">
+          <div className="relative h-52 w-full overflow-hidden rounded-lg shadow-md lg:h-96">
             <Image
               src={JavascriptCode}
               fill
@@ -35,7 +35,7 @@ function Contact() {
               (max-width: 1200px) 100%,
               100%"
               alt="contact-me-image"
-              className="focus:scale-105 hover:scale-105 transition-all rounded-lg"
+              className="rounded-lg transition-all hover:scale-105 focus:scale-105"
             />
           </div>
           <ContactSection />

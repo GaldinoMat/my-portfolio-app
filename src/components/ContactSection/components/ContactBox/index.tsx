@@ -6,8 +6,8 @@ function ContactBox() {
   const { messages } = useLocale()
 
   return (
-    <div className="py-4 h-full lg:w-1/2 lg:h-[32.5rem] rounded-lg flex flex-col gap-5">
-      <ul className="text-lg flex flex-col gap-4">
+    <div className="flex h-full flex-col gap-5 rounded-lg py-4 lg:h-[32.5rem] lg:w-1/2">
+      <ul className="flex flex-col gap-4 text-lg">
         <li>Brasilia, {messages.Contact?.country}</li>
         <li>
           {messages.Contact?.emailDisclaimer}{" "}
