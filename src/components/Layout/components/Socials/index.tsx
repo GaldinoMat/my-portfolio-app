@@ -16,7 +16,7 @@ function Socials() {
           [messages.Navigation?.navPortfolio, "portfolio"],
           [messages.Navigation?.navContact, "contact"],
         ].map(([title, url]) => (
-          <Link href={url} key={title} className="text-base">
+          <Link href={url} key={url} className="text-base">
             {title}
           </Link>
         ))}

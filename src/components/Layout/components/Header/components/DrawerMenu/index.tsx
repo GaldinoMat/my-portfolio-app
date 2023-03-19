@@ -18,7 +18,7 @@ function DrawerMenu({ isNavOpen, setIsNavOpen }: DrawerType) {
       ].map(([title, url]) => (
         <Link
           href={url}
-          key={title?.toLowerCase()}
+          key={url}
           className="text-[#212121] font-medium dark:text-slate-100 text-3xl"
           onClick={() => setIsNavOpen(false)}
         >
