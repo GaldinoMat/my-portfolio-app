@@ -29,9 +29,9 @@ function StacksList() {
         prefix={messages.Home?.homeStacksPrefix}
         suffix={messages.Home?.homeStacksSuffix}
       />
-      <div className="flex flex-col gap-6 lg:flex-row">
-        <div className="rounded-lg bg-[#212121] text-center shadow-md dark:bg-[#373737] lg:h-[17.5rem] lg:min-w-[20rem]">
-          <ul className="flex w-full flex-col items-center lg:h-auto">
+      <div className="flex flex-col gap-6">
+        <div className="w-full rounded-lg bg-[#212121] text-center shadow-md dark:bg-[#373737]">
+          <ul className="flex w-full flex-col items-center md:flex-row lg:h-auto">
             <StackToggle
               id="Stacks"
               handleTabChange={handleTabChange}
