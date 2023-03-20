@@ -38,7 +38,7 @@ function PortfolioCard({
       <div className="relative z-0 h-full w-full">
         {windowSize < 768 ? (
           <Image
-            className="z-0 rounded-lg"
+            className="z-0 rounded-lg object-cover object-top"
             src={mobileImage.url}
             fill
             priority
