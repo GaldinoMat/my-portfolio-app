@@ -6,7 +6,7 @@ function AboutMeHero() {
   const { messages } = useLocale()
 
   return (
-    <div className="flex h-[28rem] w-full flex-col items-start justify-center bg-[#EAEAEA] dark:bg-[#212121] lg:h-[30rem]">
+    <div className="flex h-[28rem] w-full flex-col items-start justify-center bg-[#EAEAEA] dark:bg-[#212121] lg:h-[40rem]">
       <div className="mx-auto flex w-full flex-col items-start justify-center gap-4 px-4 md:max-w-xl lg:max-w-5xl lg:px-2">
         <div className="lg:w-[22rem]">
           <h2 className="mt-5 text-lg font-medium lg:px-0 lg:text-2xl">

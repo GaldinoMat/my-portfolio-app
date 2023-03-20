@@ -24,7 +24,7 @@ function StacksList() {
   }, [selectedTab, list])
 
   return (
-    <div className="flex w-full flex-col gap-8">
+    <div className="flex w-full flex-col gap-6 lg:gap-10">
       <PageTitle
         prefix={messages.Home?.homeStacksPrefix}
         suffix={messages.Home?.homeStacksSuffix}

@@ -3,7 +3,7 @@ import { PortfolioShowcaseType } from "./typings/types"
 
 function PortfolioShowcase({ children }: PortfolioShowcaseType) {
   return (
-    <div className="flex w-full flex-col gap-16 lg:flex-row lg:flex-wrap lg:gap-12">
+    <div className="flex w-full flex-col gap-6 lg:flex-row lg:flex-wrap lg:justify-between lg:gap-10">
       {children}
     </div>
   )

@@ -7,7 +7,7 @@ function ServicesList() {
   const { messages } = useLocale()
 
   return (
-    <div className="-mt-20 flex w-full flex-col gap-6">
+    <div className="-mt-20 flex w-full flex-col gap-6 lg:gap-10">
       <div className="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center lg:justify-between">
         <Card
           first

@@ -52,9 +52,9 @@ export default function Home({ portfolioShowcases }: PortfolioTypes) {
       </Head>
       <Layout>
         <AboutMeHero />
-        <div className="lg:gap-18 flex w-full flex-col gap-8 px-8 md:max-w-xl md:px-0 lg:mx-auto lg:max-w-5xl">
+        <div className="flex w-full flex-col gap-8 px-8 md:max-w-xl md:px-0 lg:mx-auto lg:max-w-5xl lg:gap-14">
           <ServicesList />
-          <div className="lg:gap-18 flex w-full flex-col gap-8">
+          <div className="flex w-full flex-col gap-6 lg:gap-10">
             <PageTitle
               prefix={messages.Home?.homeCasesPrefix}
               suffix={messages.Home?.homeCasesSuffix}
