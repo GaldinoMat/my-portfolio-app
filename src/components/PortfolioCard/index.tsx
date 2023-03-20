@@ -29,7 +29,7 @@ function PortfolioCard({
     <div
       className={`w-full ${
         single ? "lg:w-full" : "lg:w-[485px]"
-      } group relative h-[32rem] shadow-md lg:flex lg:flex-row lg:items-center lg:justify-center`}
+      } group relative h-[32rem] rounded-lg shadow-md lg:flex lg:flex-row lg:items-center lg:justify-center`}
       onClick={() => handlePortfolioClick(!isMobileOpen)}
       onKeyDown={() => handlePortfolioClick(true)}
       tabIndex={0}
